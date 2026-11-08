@@ -1,18 +1,39 @@
-# Website De Magnolia — drie voorstellen
+# Website Liesbeth Postma – drie voorstellen
 
-Open `index.html` (dubbelklikken) voor een keuzemenu, of open direct:
+Open `index.html` in de hoofdmap voor een keuzepagina, of direct:
 
-- `versie-1/index.html` — **Licht & Editorial**: pastelgroen en zachtroze, veel witruimte, een magnoliatak die zichzelf tekent in de hero en een bloem die bovenin met je scroll meegroeit.
-- `versie-2/index.html` — **Statement Salie**: diep saliegroen met zachtroze, grote filmische typografie en een interactief bloesemveld in de hero dat op je muis reageert (klikken geeft een bloesemwolk).
-- `versie-3/index.html` — **Warm & Organisch**: zachte vormen, handgeschreven accenten, een bloeiende magnolia in de hero, vallende blaadjes én een bloesem-effect bij elke klik.
+| Versie | Sfeer | Bijzonderheden |
+|---|---|---|
+| `versie-1/` Bloesem | Licht en luchtig, blush → lavendel | Boogportret in de hero, magnolia groeit naast de vijf pijlers terwijl je scrolt, bloesemblaadjes dwarrelen aan het eind |
+| `versie-2/` Verloop | Editorial en warm, diepe mauve hero | Cirkelportret (knipoog naar de inspiratiesite), bewegende strook met kernwoorden, thema's met meebewegende foto, tellers |
+| `versie-3/` Water | Fotografisch, lichtblauw en salie met oudroze | Volledig beeld als opening, verhalende scrollsectie waarin de boom groeit terwijl de pijlers één voor één verschijnen |
 
-Het kleurenpalet volgt de pastelkleuren van de huidige site: saliegroen `#5e7e6e`, pastelgroen `#b3ccc1`, mistgroen `#eff2f0`, zachtroze en warm terracotta `#ca9470`.
+Elke versie bevat alle pagina's uit het websitepakket:
+home, de vier hulpvragen, werkwijze (+ vijf pijlerpagina's), over mij, praktische informatie, contact (met formulier), blog (+ eerste artikel), familieopstellingen, workshops, privacy en algemene voorwaarden.
 
-## Techniek
-- Puur HTML/CSS/JS, geen installatie of hosting-vereisten. Werkt door de bestanden op elke webserver te zetten.
-- Alle foto's en logo's zijn gecomprimeerd **ingesloten in de HTML-bestanden zelf** — elk bestand werkt dus ook los, zonder de `assets/`-map. De originele foto's staan nog in `assets/` (met geoptimaliseerde kopieën in `assets/opt/`).
-- Volledig responsive (mobiel, tablet, desktop) en met `prefers-reduced-motion`-ondersteuning in versie 3.
-- Het contactformulier is een demo (toont een bevestiging); voor een werkend formulier is een formulierdienst of server nodig (bijv. Formspree, of de mail-plugin van de hoster).
+## Lokaal bekijken
 
-## Inhoud
-Alle inhoud komt van de huidige site magnolia-elst.nl: hulpvragen, holistische werkwijze, het Vierkant van Vertrouwen, tarieven (€80 intake / €120 vervolg / €555 vijf-sessiekaart), vergoedingsinfo, ervaringen van cliënten (herschreven), registraties (KvK, RBCZ, NBVH, S.C.A.G., AGB) en contactgegevens.
+```bash
+python -m http.server 8765
+```
+
+Daarna naar http://localhost:8765/ gaan.
+
+## Aanpassen
+
+De sites worden gegenereerd uit `bouw/`:
+
+- `bouw/content.py` – alle teksten, menu, tarieven, contactgegevens, SEO-titels
+- `bouw/common.py` – menu, footer, subpagina-opmaak, basis-CSS en JS
+- `bouw/boom.py` – de groeiende magnolia (SVG + animatie)
+- `bouw/v1.py`, `v2.py`, `v3.py` – huisstijl en homepage per versie
+
+Na een wijziging: `python bouw/build.py`.
+
+## Nog in te vullen vóór publicatie
+
+- Persoonlijke video op de homepage (nu een placeholder met afspeelknop, verwijst naar Over mij)
+- Oude blogs van de vorige website (de nieuwe blog staat al bovenaan)
+- Definitief e-mailadres en contactformulier-afhandeling (nu `mailto:`)
+- Privacyverklaring en algemene voorwaarden (nu kaderpagina's)
+- Controle van tarieven, adres en btw-vermelding (zoals het tekstpakket vraagt)
