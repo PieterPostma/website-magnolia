@@ -32,7 +32,7 @@ Na een wijziging: `python bouw/build.py`.
 
 ## Nog in te vullen vóór publicatie
 
-- Persoonlijke video op de homepage (nu een placeholder met afspeelknop, verwijst naar Over mij)
+- Persoonlijke video op de homepage: speelt via Google Drive (bestand-ID in `bouw/content.py`, `VIDEO_ID`). Werkt pas als het Drive-bestand op 'Iedereen met de link' staat; het bestand is 526 MB en past daarom niet in de repo. Alternatief: upload naar YouTube (verborgen) of Vimeo en pas de speler-URL aan in `bouw/v2.py`.
 - Oude blogs van de vorige website (de nieuwe blog staat al bovenaan)
 - Definitief e-mailadres en contactformulier-afhandeling (nu `mailto:`)
 - Privacyverklaring en algemene voorwaarden (nu kaderpagina's)

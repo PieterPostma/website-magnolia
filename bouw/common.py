@@ -97,6 +97,7 @@ def footer(prefix=""):
       <p class="voet-social">
         <a href="{INSTAGRAM}" target="_blank" rel="noopener" aria-label="Instagram"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
         <a href="{LINKEDIN}" target="_blank" rel="noopener" aria-label="LinkedIn"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 10v7M8 7v.5M12 17v-4a2 2 0 0 1 4 0v4M12 10v7"/></svg></a>
+        <a href="{FACEBOOK}" target="_blank" rel="noopener" aria-label="Facebook"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 8h3V4h-3a4 4 0 0 0-4 4v3H7v4h3v6h4v-6h3l1-4h-4V8.5A.5.5 0 0 1 14 8z"/></svg></a>
       </p>
     </div>
     <div class="voet-kol">
@@ -105,7 +106,7 @@ def footer(prefix=""):
     </div>
     <div class="voet-kol">
       <h3>Werkwijze</h3>
-      <ul>{pijler_links}<li><a href="{prefix}werkwijze.html">Alles over mijn werkwijze</a></li></ul>
+      <ul>{pijler_links}<li><a href="{prefix}werkwijze.html">Wat kan mijn begeleiding jou brengen</a></li></ul>
     </div>
     <div class="voet-kol">
       <h3>Contact</h3>
@@ -119,7 +120,7 @@ def footer(prefix=""):
     </div>
   </div>
   <div class="voet-onder">
-    <p>© 2026 Liesbeth Postma · Psychosociaal en lichaamsgericht therapeut · KvK {KVK} · BTW {BTW} · AGB praktijk {AGB_PRAKTIJK} · AGB zorgverlener {AGB_ZORG}</p>
+    <p>© 2026 Liesbeth Postma · Psychosociaal en lichaamsgericht therapeut · KvK {KVK} · BTW {BTW}</p>
     <p><a href="{prefix}privacy.html">Privacyverklaring</a> · <a href="{prefix}algemene-voorwaarden.html">Algemene voorwaarden</a></p>
   </div>
 </footer>
@@ -158,6 +159,8 @@ def blok_html(b, prefix=""):
     if t == "pijlers":
         kaarten = "".join(f"""<article class="pijler" id="{p['slug']}"><span class="pijler-nr">0{i+1}</span><h3>{esc(p['kop'])}</h3><p>{esc(p['tekst'])}</p><a class="pijl-link" href="{prefix}werkwijze/{p['slug']}.html">Lees meer <span aria-hidden="true">→</span></a></article>""" for i, p in enumerate(PIJLERS))
         return f'<h2 id="pijlers">Mijn vijf pijlers</h2><p>De vijf pijlers hieronder vormen de basis van mijn begeleiding. Klik door voor een verdiepende uitleg per pijler.</p><div class="pijlers">{kaarten}</div>'
+    if t == "reviews":
+        return reviews_html("Wat cliënten zeggen", "Ervaringen van mensen die ik mocht begeleiden")
     if t == "contact":
         return f"""<div class="contact-kaart">
   <div class="contact-gegevens">
@@ -176,6 +179,11 @@ def blok_html(b, prefix=""):
   </form>
 </div>"""
     return ""
+
+
+def reviews_html(boven, kop, extra_cls=""):
+    kaarten = "".join(f"""<figure class="review reveal vertraag-{(i%4)+1}"><blockquote><strong>{esc(k)}</strong><p>{esc(t)}</p></blockquote><figcaption>{esc(n)}</figcaption></figure>""" for i, (n, k, t) in enumerate(REVIEWS))
+    return f'<div class="reviews {extra_cls}"><div class="reviews-kop reveal"><p class="boventitel">{esc(boven)}</p><h2>{esc(kop)}</h2></div><div class="reviews-grid">{kaarten}</div></div>'
 
 
 def subpagina(slug, pag, thema, prefix=""):
@@ -235,10 +243,7 @@ def artikelpagina(a, thema):
 
 
 def juridisch(slug, kop, thema):
-    tekst = {
-        "privacy": [("p", "Liesbeth Postma, psychosociaal en lichaamsgericht therapeut, gaat zorgvuldig om met jouw persoonsgegevens. Deze pagina wordt vóór publicatie aangevuld met de volledige privacyverklaring (verwerking van contactgegevens, dossiervoering, bewaartermijnen, beroepsgeheim en jouw rechten)."), ("h2", "Contact"), ("p", f"Vragen over privacy? Mail naar <a href='mailto:{MAIL}'>{MAIL}</a>.")],
-        "algemene-voorwaarden": [("p", "De algemene voorwaarden voor individuele therapie, familieopstellingen en workshops worden hier vóór publicatie geplaatst (afspraken, annulering, betaling, klachtenregeling)."), ("h2", "Contact"), ("p", f"Vragen? Mail naar <a href='mailto:{MAIL}'>{MAIL}</a>.")],
-    }[slug]
+    tekst = {"privacy": PRIVACY, "algemene-voorwaarden": VOORWAARDEN}[slug]
     pag = dict(kop=kop, sub="Liesbeth Postma", foto=None, seo_titel=f"{kop} | Liesbeth Postma", seo=kop, blokken=tekst)
     return subpagina(slug, pag, thema)
 
@@ -383,6 +388,20 @@ p{margin:0 0 1.1em}
 .slot-merk{margin:0 auto 1rem;width:90px}
 .slotband h2{font-size:clamp(1.8rem,3.5vw,2.6rem)}
 .slotband p{font-family:var(--f-head);font-style:italic;font-size:1.3rem;color:var(--muted);margin-bottom:1.8rem}
+
+/* ---- reviews ---- */
+.reviews{margin:3em 0 2em}
+.reviews-kop{max-width:640px;margin-bottom:2rem}
+.reviews-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.4rem}
+.review{margin:0;background:var(--surface);border:1px solid var(--line);border-radius:28px;padding:2rem 2.2rem;position:relative;display:flex;flex-direction:column}
+.review::before{content:"\201C";position:absolute;top:.6rem;left:1.6rem;font-family:var(--f-head);font-size:5rem;line-height:1;color:var(--accent-l);opacity:.7}
+.review blockquote{margin:0;flex:1;padding-top:1.4rem}
+.review strong{display:block;font-family:var(--f-head);font-weight:500;font-size:1.3rem;color:var(--head);margin-bottom:.6rem;line-height:1.3}
+.review p{font-size:.98rem;margin:0}
+.review figcaption{margin-top:1.2rem;font-size:.85rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);font-weight:600}
+.review figcaption::before{content:"";display:inline-block;width:22px;height:1px;background:var(--accent);vertical-align:middle;margin-right:.6rem}
+.tekst .reviews-grid{grid-template-columns:1fr}
+@media (max-width:760px){.reviews-grid{grid-template-columns:1fr}}
 
 /* ---- footer ---- */
 .voet{margin-top:5rem;padding:4rem 1.25rem 2rem;background:var(--voet-bg);color:var(--voet-ink)}

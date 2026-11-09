@@ -7,10 +7,13 @@ MOTTO = "Leer te voelen – durf te vertrouwen"
 STROOM = "Wat gevoeld mag worden, kan weer gaan stromen."
 TEL = "06 15 14 83 69"
 TEL_RAW = "+31615148369"
-MAIL = "liesbeth@magnolia-elst.nl"
+MAIL = "info@liesbethpostma.nl"
+WEBSITE = "www.liesbethpostma.nl"
+VIDEO_ID = "1Cnbb9ZB7BUMy4M89nqGrQoWjhz33OBih"  # Google Drive: Video_LiesbethpraktijkV2.mp4
 ADRES = "Dijkstraat 20, Bemmel"
-INSTAGRAM = "https://www.instagram.com/praktijk_de_magnolia/"
-LINKEDIN = "https://www.linkedin.com/in/liesbeth-postma/"
+INSTAGRAM = "https://www.instagram.com/liesbeth.postma.therapeut/"
+FACEBOOK = "https://www.facebook.com/lpostma1"
+LINKEDIN = "https://www.linkedin.com/in/liesbeth-postma-83b19a18a"
 KVK = "91541824"
 BTW = "NL004902550B95"
 AGB_PRAKTIJK = "90096017"
@@ -239,7 +242,7 @@ PAGINAS["werkwijze"] = dict(
     ])
 
 PAGINAS["over-mij"] = dict(
-    kop="Over mij", sub="Ik ben Liesbeth", foto="portret-stoel.jpg",
+    kop="Over mij", sub="Ik ben Liesbeth", foto="wilg-lach.jpg",
     seo_titel="Over Liesbeth Postma | Psychosociaal en lichaamsgericht therapeut",
     seo="Maak kennis met Liesbeth Postma: moeder van twee kinderen en therapeut. Professionele kennis, doorleefde ervaring en begeleiding vanuit rust en vertrouwen.",
     blokken=[
@@ -253,6 +256,7 @@ PAGINAS["over-mij"] = dict(
         ("p", "Ik ben gediplomeerd psychosociaal en lichaamsgericht therapeut en blijf mij ontwikkelen door trainingen en bijscholing. Ik geloof dat verandering van binnenuit begint: bij de bereidheid om naar jezelf te kijken en te investeren in je eigen groei."),
         ("quote", "Leren voelen en vertrouwen ontwikkelen is een weg die je zelf bewandelt. Ik loop graag een stukje met je mee."),
         ("stroom",),
+        ("reviews",),
         ("cta2", "Maak kennis met mijn werkwijze", "werkwijze.html", "Neem contact op", "contact.html"),
     ])
 
@@ -472,4 +476,77 @@ ARTIKELEN = [
             ("p", "Wil jij je bewust worden van je overlevingsmechanismen? Lees meer over <a href='../werkwijze/innerlijk-kindwerk.html'>innerlijk-kindwerk</a>."),
             ("p", f"<small>{OUD}</small>"),
          ]),
+]
+
+
+# ---------- reviews (overgenomen van magnolia-elst.nl) ----------
+REVIEWS = [
+    ("Lisa, Arnhem", "Een persoonsgerichte en brede aanpak",
+     "Na mijn burn-out wist ik niet goed welke weg ik in moest slaan. Samen met Liesbeth heb ik hier een duidelijke invulling aan kunnen geven. Met een persoonsgerichte en brede aanpak heeft Liesbeth mij tot inzicht gebracht. Als therapeut is Liesbeth liefdevol maar ook duidelijk: ze kijkt naar wat je nodig hebt en gaat daar samen met jou mee aan de slag."),
+    ("Wikke, Zevenaar", "Liefdevolle stappen voor mezelf",
+     "Al jaren leefde ik in een soort sneltrein zonder echt te luisteren naar mijn gevoel en te investeren in mezelf. Ik zocht iemand die mij begreep. Liesbeth kon met empathie naar mij luisteren, waardoor ik mij op mijn gemak voelde. Door haar therapie heb ik liefdevolle stappen voor mezelf kunnen zetten en had ik de moed en energie om op mijn gevoel af te gaan."),
+    ("Marianne, Arnhem", "Puzzelstukjes vielen op hun plek",
+     "Ik vond het een leerzame en verhelderende periode. De puzzelstukjes vielen op hun plek. Ik voelde me op mijn gemak en prettig bij Liesbeth, daardoor hebben we snel stappen kunnen zetten. De oefeningen zijn praktisch en hebben echt geholpen om tot inzichten te komen en om emoties te doorleven en te accepteren. Niet altijd even fijn, maar wel nodig om verder te komen. En dat is gelukt."),
+    ("Truus, Gennep", "Ik voel mij meer waard",
+     "Omdat ik moeite had met loslaten ben ik bij Liesbeth terechtgekomen. Verschillende thema's kwamen aan de orde door haar tactische doorvragen. Wat ik tijdens de sessies zag, ben ik op doek gaan schilderen om het nog dieper te verwerken. Nog nooit zo mooi huiswerk gehad. Na vier sessies voel ik me meer waard, mag ik er zijn en durf ik gemakkelijker dingen te ondernemen en veranderingen aan te gaan."),
+]
+
+# ---------- juridische teksten (overgenomen van magnolia-elst.nl, naam en adres geactualiseerd) ----------
+VOORWAARDEN = [
+    ("p", f"<strong>{NAAM}</strong> – {TITEL}<br>{ADRES}<br>KvK {KVK}"),
+    ("p", "Algemene bepalingen behorend bij de behandelingsovereenkomst tussen de therapeut (Liesbeth Postma) en de cliënt / de cliënten."),
+    ("h2", "Behandelingsovereenkomst"),
+    ("p", "Indien de cliënt na het eerste kennismakingsgesprek een nieuwe datum heeft afgesproken voor een vervolggesprek, is er sprake van een behandelingsovereenkomst. Deze behandelingsovereenkomst wordt op schrift vastgelegd."),
+    ("p", "De behandelingsovereenkomst is tweeledig:"),
+    ("ul", ["De therapeut en de cliënt gaan een relatie met elkaar aan voor een bepaalde periode in de verhouding therapeut – cliënt.",
+            "De behandeling heeft betrekking op de door de cliënt aangedragen hulpvraag en behandeldoelen. Deze kunnen lopende het traject worden bijgesteld of gespecificeerd."]),
+    ("h2", "Beëindiging van de overeenkomst"),
+    ("p", "De overeenkomst kan op de volgende manieren of door de volgende omstandigheden worden beëindigd:"),
+    ("ul", ["Therapeut en cliënt bepalen in gezamenlijk overleg dat er geen sessies meer nodig zijn.",
+            "De cliënt geeft mondeling, schriftelijk of via e-mail aan geen sessies meer te willen afspreken.",
+            "De therapeut geeft mondeling, schriftelijk of via e-mail aan geen sessies meer te zullen geven.",
+            "De cliënt houdt zich herhaaldelijk niet aan de algemene bepalingen uit deze behandelingsovereenkomst of aan afspraken die gedurende de sessies zijn gemaakt tussen cliënt en therapeut.",
+            "De therapeut is van mening dat zij, gezien de problematiek van de cliënt en haar eigen competentie, niet bekwaam is om de cliënt te begeleiden. Dit is in ieder geval aan de orde als de problematiek direct verband houdt met contra-indicaties."]),
+    ("p", "De overeenkomst eindigt van rechtswege indien er geen sessie is afgesproken voor een termijn van langer dan drie maanden na de laatst gehouden sessie, tenzij uitdrukkelijk anders afgesproken tussen therapeut en cliënt."),
+    ("h2", "Tarief en betaling"),
+    ("p", "Bij het aangaan van de overeenkomst wordt voor een te houden sessie een bedrag per sessie afgesproken. Dit is opgenomen in de behandelovereenkomst. De cliënt ontvangt een factuur en dient deze binnen 14 dagen over te maken."),
+    ("h2", "Afzeggen van een afspraak"),
+    ("p", "Bij verhindering dient een afgesproken sessie 48 uur (twee werkdagen) van tevoren te worden afgemeld. De therapeut brengt de kosten voor een gemiste sessie in rekening indien de cliënt zich niet tijdig heeft afgemeld, ongeacht de reden van afmelding. Dit geldt ook als de cliënt, om welke reden dan ook, niet komt op de afgesproken dag en tijd."),
+    ("h2", "Dossier"),
+    ("p", "De therapeut houdt een dossier bij met aantekeningen van de gehouden sessies en andere relevante documenten, dat op verzoek door de cliënt kan worden ingezien. Het dossier (of een deel daarvan) wordt dan gekopieerd; dit is kosteloos, met uitzondering van buitensporige verzoeken. Het dossier wordt conform de wettelijke bewaartermijn 20 jaar bewaard. Verder bestaat er inzagerecht voor nabestaanden. Het zwaartepunt ligt op het samen beslissen over de behandeling (zie PR 520 Hantering dossier voor de RBCZ-sectoren)."),
+    ("h2", "Geheimhouding"),
+    ("p", "De therapeut houdt zich aan haar geheimhoudingsplicht. Gegevens van de cliënt worden alleen met diens uitdrukkelijke goedkeuring aan derden (artsen en andere therapeuten) overhandigd of medegedeeld."),
+    ("p", "Indien de cliënt, diens huisarts of een andere behandelaar een schriftelijke rapportage verlangt van het behandelingstraject, wordt hiervoor een factuur gestuurd aan de cliënt. Deze factuur behelst maximaal een uur arbeid tegen het in de overeenkomst afgesproken uurtarief."),
+    ("h2", "Beroepsorganisatie en klachten"),
+    ("p", "De therapeut is aangesloten bij de beroepsorganisatie Nederlandse Beroepsvereniging voor Hypnotherapeuten (NBVH). De regels van deze beroepsorganisatie zijn op de therapeut van toepassing. De cliënt kan zich met klachten over de therapeut bij deze beroepsorganisatie melden. De therapeut is daarnaast geregistreerd in het HBO Register Beroepsbeoefenaren Complementaire Zorg (RBCZ)."),
+    ("h2", "In de praktijk"),
+    ("p", "De cliënt gedraagt zich als een gast en houdt zich aan de regels van de gastvrouw (de therapeut). Er wordt tijdens een sessie niet gerookt en geen alcohol gedronken. De kosten van vernieling van eigendommen van de therapeut door de cliënt worden op de cliënt verhaald. Van iedere vorm van mishandeling van de therapeut zal te allen tijde aangifte bij de politie worden gedaan."),
+    ("h2", "Aansprakelijkheid"),
+    ("p", "Liesbeth Postma is niet aansprakelijk voor eventuele nadelige gevolgen die zijn ontstaan doordat de cliënt onjuiste of onvolledige informatie heeft verstrekt, dan wel doordat de cliënt voor hem/haar bekende en beschikbare informatie uit medische dossiers van arts, specialist of andere behandelaar niet heeft verstrekt."),
+    ("p", f"De cliënt heeft de privacyverklaring gelezen die vermeld staat op de website {WEBSITE} en stemt in met deze privacyverklaring."),
+    ("p", f"Liesbeth Postma is niet aansprakelijk voor schade die is ontstaan aan eigendommen van de cliënt door parkeren op of het betreden van het terrein aan de {ADRES.replace(', ', ' te ')}, noch voor andere schade ontstaan door het betreden van de praktijk en het gebruik van het toilet."),
+]
+
+PRIVACY = [
+    ("h2", "Jouw privacy"),
+    ("p", "Voor een goede behandeling is het noodzakelijk dat ik, als jouw behandelend therapeut, een dossier aanleg. Dit is ook een wettelijke plicht, opgelegd door de WGBO. Jouw dossier bevat aantekeningen over je gezondheidstoestand en gegevens over de uitgevoerde onderzoeken en behandelingen."),
+    ("p", "Ook worden in het dossier gegevens opgenomen die voor jouw behandeling noodzakelijk zijn en die ik, na jouw expliciete toestemming, heb opgevraagd bij een andere zorgverlener, bijvoorbeeld de huisarts."),
+    ("p", "Ik doe mijn best om je privacy te waarborgen. Dit betekent onder meer dat ik:"),
+    ("ul", ["zorgvuldig omga met je persoonlijke en medische gegevens;",
+            "ervoor zorg dat onbevoegden geen toegang hebben tot jouw gegevens."]),
+    ("p", "Als jouw behandelend therapeut heb ik als enige toegang tot de gegevens in je dossier. Ik heb een wettelijke geheimhoudingsplicht (beroepsgeheim)."),
+    ("h2", "Waarvoor je gegevens nog meer gebruikt kunnen worden"),
+    ("ul", ["Om andere zorgverleners te informeren, bijvoorbeeld als de therapie is afgerond of bij een verwijzing naar een andere behandelaar. Dit gebeurt alleen met jouw expliciete toestemming.",
+            "Voor waarneming tijdens mijn afwezigheid.",
+            "Voor geanonimiseerd gebruik tijdens intercollegiale toetsing.",
+            "Een klein deel van de gegevens uit je dossier wordt gebruikt voor de financiële administratie, zodat ik of mijn administrateur een factuur kan opstellen."]),
+    ("p", "Als ik om een andere reden gebruik wil maken van jouw gegevens, informeer ik je eerst en vraag ik expliciet je toestemming."),
+    ("p", "De gegevens in het cliëntendossier blijven, zoals de Wet op de geneeskundige behandelingsovereenkomst vereist, 20 jaar bewaard."),
+    ("h2", "Privacy op de zorgnota"),
+    ("p", "Op de zorgnota die je ontvangt staan de gegevens die door de zorgverzekeraar gevraagd worden, zodat je deze nota kunt declareren bij jouw zorgverzekeraar:"),
+    ("ul", ["je naam, adres en woonplaats;", "je geboortedatum;", "de datum van de behandeling;",
+            "een korte omschrijving van de behandeling, zoals 'behandeling hypnotherapie' of 'psychosociaal consult';",
+            "de kosten van het consult."]),
+    ("h2", "Vragen"),
+    ("p", f"Vragen over privacy? Mail naar <a href='mailto:{MAIL}'>{MAIL}</a>."),
 ]

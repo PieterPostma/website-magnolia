@@ -40,7 +40,7 @@ if len(sys.argv) > 1:
 # keuzepagina
 kaarten = ""
 beschr = {"v1": ("Bloesem", "Licht en luchtig. Blush dat overloopt in lavendel, een boogportret in de hero en een magnolia die naast de vijf pijlers meegroeit terwijl je scrolt. Aan het eind dwarrelen de bloesemblaadjes over de pagina."),
-          "v2": ("Verloop", "Editorial en warm. Een diepe mauve hero met cirkelportret (knipoog naar de inspiratiesite), een bewegende strook met kernwoorden, thema's met meebewegende foto en een boom die bij het laden zelf opkomt."),
+          "v2": ("Verloop", "Editorial en warm. Groot gecentreerd logo, een diepe mauve hero met handtekening, natuurfoto's als rustige overgangen, video, reviews en thema's met meebewegende foto."),
           "v3": ("Water", "Fotografisch en rustig. Volledig beeld van het water als opening, lichtblauw en salie met oudroze accenten, en een verhalende sectie waarin de magnolia groeit terwijl de vijf pijlers één voor één verschijnen.")}
 for map_, mod in VERSIES:
     n, b = beschr[mod]
